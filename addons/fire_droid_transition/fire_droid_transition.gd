@@ -3,10 +3,13 @@ extends EditorPlugin
 
 
 func _enter_tree() -> void:
-	# Initialization of the plugin goes here.
-	pass
+	add_custom_type(
+		"FDTransition",
+		"Node",
+		preload("res://addons/fire_droid_transition/scripts/fd_transition.gd"),
+		preload("res://addons/fire_droid_transition/icons/FDTransition.svg")
+	)
 
 
 func _exit_tree() -> void:
-	# Clean-up of the plugin goes here.
-	pass
+	remove_custom_type("FDTransition")
